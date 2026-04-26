@@ -23,14 +23,14 @@ jobs:
       - name: Check for Path Server
         run: |
           cargo fmt --all -- --check
-          cargo clippy -- -D warnings
+          cargo clippy --all-features -- -D warnings
           cargo audit --deny warnings
 
       - name: Check for Zed Extension
         working-directory: ./extensions/zed
         run: |
           cargo fmt --all -- --check
-          cargo clippy -- -D warnings
+          cargo clippy --all-features -- -D warnings
           cargo audit --deny warnings
 
   check-typescript:
@@ -71,7 +71,7 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
 
       - name: Run tests in debug mode
-        run: cargo test
+        run: cargo test --all-features
 
       - name: Run tests in release mode
-        run: cargo test --release
+        run: cargo test --release --all-features
