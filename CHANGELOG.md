@@ -2,7 +2,7 @@
 
 All notable changes to the Path Server will be documented in this file.
 
-## [Unreleased]
+## [1.1.2] - 2026-04-26
 ### Fixed
 - **Core**: Fixed the missing latency log for hover LSP requests.
 
@@ -10,6 +10,7 @@ All notable changes to the Path Server will be documented in this file.
 - Refactored the structure of README.md to make it more friendly for new users.
 - Removed dependencies on `blake3`, specified feature flags for `serde` and `tokio` to reduce executable size.
 - Added `cargo audit` to CI to check for vulnerable dependencies.
+- Updated CI to check and test all features.
 
 ## [1.1.1] - 2026-04-04
 ### Added
