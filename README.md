@@ -130,6 +130,7 @@ Run `zed: open settings file` from the command palette to edit user settings jso
 - [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=LKL.path-server)
 - [Path Server Icon](https://pictogrammers.com/library/mdi/icon/slash-forward-box/)
 - [Crates.io](https://crates.io/crates/path-server)
+- [Project Timer icon color](https://code.visualstudio.com/brand)
 
 ## TODO
 - [x] Support relative and absolute path completion.
