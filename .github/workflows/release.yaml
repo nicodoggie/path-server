@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     tags:
-      - "v*"
+      - "v[0-9]*.[0-9]*.[0-9]*"
 
 jobs:
   # Step 1: Check and Test
@@ -83,6 +83,15 @@ jobs:
         working-directory: ./extensions/vscode
         run: npm install
 
+      - name: Check VS Code Extension Version
+        working-directory: ./extensions/vscode
+        run: |
+          EXTENSION_VERSION=$(node -p "require('./package.json').version")
+          if [ "$EXTENSION_VERSION" != "${{ github.ref_name }}" ]; then
+            echo "Extension version $EXTENSION_VERSION does not match tag ${GITHUB_REF_NAME}"
+            exit 1
+          fi
+
       - name: Package VS Code Extension
         working-directory: ./extensions/vscode
         run: npm run build -- --target ${{ matrix.vscode_target }} -o
@@ -135,11 +144,27 @@ jobs:
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
 
-      - name: Install toml-cli
-        run: cargo install toml-cli
-      - name: Check version
-        run: test "v$(toml get -r Cargo.toml package.version)" = "${{github.ref_name}}"
+      - name: Install toml-cli and Check version
+        run: |
+          cargo install toml-cli
+          test "v$(toml get -r Cargo.toml package.version)" = "${{github.ref_name}}"
+
       - name: Publish to crates.io
         run: cargo publish
         env:
           CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
+
+  # Step 5: Publish Zed Extension (TODO)
+  release-zed-extension:
+    name: Publish Zed Extension
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Install toml-cli and Check version
+        run: |
+          cargo install toml-cli
+          test "v$(toml get -r extensions/zed/Cargo.toml package.version)" = "${{github.ref_name}}"
+          test "v$(toml get -r extensions/zed/extension.toml version)" = "${{github.ref_name}}"
