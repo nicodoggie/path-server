@@ -129,6 +129,7 @@ Run `zed: open settings file` from the command palette to edit user settings jso
 ## References
 - [GitHub Repository](https://github.com/kunlinglio/path-server)
 - [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=LKL.path-server)
+- [Download VSIX](https://github.com/kunlinglio/path-server/releases/latest)
 - [Path Server Icon](https://pictogrammers.com/library/mdi/icon/slash-forward-box/)
 - [Path Server icon color](https://code.visualstudio.com/brand)
 - [Crates.io](https://crates.io/crates/path-server)
