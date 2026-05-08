@@ -85,6 +85,7 @@ jobs:
 
       - name: Check VS Code Extension Version
         working-directory: ./extensions/vscode
+        shell: bash
         run: |
           EXTENSION_VERSION=$(node -p "require('./package.json').version")
           if [ "v$EXTENSION_VERSION" != "${{ github.ref_name }}" ]; then

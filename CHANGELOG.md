@@ -2,12 +2,12 @@
 
 All notable changes to the Path Server will be documented in this file.
 
-## [Unreleased]
+## [1.2.0] - 2026-05-08
 Path Server is now published to crates.io! You can now install it via `cargo install path-server`.
 
 ### Added
 - Added new step to release workflow to publish to crates.io.
-- Added TTL to resolved path cache to keep path highlighting up to date with file system changes.
+- **Core**: Added TTL to resolved path cache to keep path highlighting up to date with file system changes.
 
 ### Improved
 - **VS Code**: Updated icon color from #007fd4 to #0098ff to keep consistent with VS Code's color palette.
