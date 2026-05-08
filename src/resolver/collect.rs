@@ -48,8 +48,7 @@ async fn compute_tokens(
         cache.clone()
     } else {
         // miss
-        let path_candidates: Arc<Vec<Vec<PathCandidate>>> =
-            Arc::new(parse_document(document).into_iter().flatten().collect());
+        let path_candidates: Arc<Vec<Vec<PathCandidate>>> = Arc::new(parse_document(document)?);
         *document.candidate_path.lock().await = Some(path_candidates.clone());
         path_candidates
     };
