@@ -44,7 +44,7 @@ fn extract_paths_from_string(path_ref: PathCandidate) -> Vec<PathCandidate> {
     // Level 3: the part of string (split by colon) is a path or not
     // Handles docker-compose volume mounts (e.g., ./src:/app/src)
     // and PATH-like environment variables (e.g., /usr/bin:/usr/local/bin)
-    results.extend(path_ref.split(&[':', '：']));
+    results.extend(path_ref.split(&[':']));
 
     results
 }
@@ -113,7 +113,7 @@ mod tests {
         let candidate = PathCandidate {
             content: "/host/path:/container/path".to_string(),
             start_byte: 0,
-            end_byte: 25,
+            end_byte: 26,
         };
         let res = extract_paths_from_string(candidate);
         for p in &res {
@@ -129,7 +129,7 @@ mod tests {
         let candidate = PathCandidate {
             content: "./data:/app/data:ro".to_string(),
             start_byte: 0,
-            end_byte: 18,
+            end_byte: 19,
         };
         let res = extract_paths_from_string(candidate);
         for p in &res {
