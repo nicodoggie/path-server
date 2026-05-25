@@ -8,7 +8,7 @@ All notable changes to the Path Server will be documented in this file.
 - **Core**: Added support for parsing paths from colon-delimited tokens, enabling docker-compose volume mount path extraction (e.g., `./src:/app/src`).
 
 ### Improved
-- **Core**: Refactored the `ClientMetadata` structure for better logging.
+- **Core**: Replaced `ClientMetadata` with `EditorInfo`/`ServerInfo` for better logging.
 
 ## [1.2.0] - 2026-05-08
 Path Server is now published to crates.io! You can now install it via `cargo install path-server`.
