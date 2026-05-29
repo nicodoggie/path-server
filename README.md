@@ -65,7 +65,7 @@ You can call Path Server commands via the Command Palette (`Cmd/Ctrl + Shift + P
 - `Path Server: Restart Server`: Restart the Path Server language server.
 - `Path Server: Open Configuration`: Open the Path Server **configuration** in a new tab.
 
-### Zed (Awaiting Official Review from Zed team)
+### Zed
 Search for `Path Server` in the Zed extensions catalog and click install.
 
 > **Note**: Zed does not support package extension manually for now.
@@ -103,7 +103,7 @@ Run `zed: open settings file` from the command palette to edit user settings jso
 ```json
 {
   "lsp": {
-    "path-server": {
+    "path-server-lsp": {
       "settings": {
         "basePath": ["${workspaceFolder}", "${document}"],
         "completion": {
@@ -130,6 +130,7 @@ Run `zed: open settings file` from the command palette to edit user settings jso
 - [GitHub Repository](https://github.com/kunlinglio/path-server)
 - [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=LKL.path-server)
 - [Download VSIX](https://github.com/kunlinglio/path-server/releases/latest)
+- [Zed Extension](https://zed.dev/extensions/path-server-lsp)
 - [Path Server Icon](https://pictogrammers.com/library/mdi/icon/slash-forward-box/)
 - [Path Server icon color](https://code.visualstudio.com/brand)
 - [Crates.io](https://crates.io/crates/path-server)

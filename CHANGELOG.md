@@ -2,6 +2,9 @@
 
 All notable changes to the Path Server will be documented in this file.
 
+## [Unreleased]
+Path Server is now published to Zed extensions! You can now install it via `zed: install extension`.
+
 ## [1.3.0] - 2026-05-25
 ### Added
 - **Core**: Added support for parsing bare path tokens delimited by whitespace (e.g., `src/ui/menu.ts` in YAML or other non-string contexts).
