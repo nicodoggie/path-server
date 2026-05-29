@@ -2,8 +2,9 @@
 
 All notable changes to the Path Server will be documented in this file.
 
-## [Unreleased]
+## [1.3.1] - 2026-05-29
 Path Server is now published to Zed extensions! You can now install it via `zed: install extension`.
+
 ### Added
 - Added Zed extension release workflow.
 

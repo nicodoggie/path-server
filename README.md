@@ -3,7 +3,7 @@ Path Server is an extremely fast and lightweight Language Server Protocol (LSP) 
 
 **Path Server** automatically **highlights valid file paths** in the editor, **provides completion suggestions** for both relative and absolute paths, and **allows users to jump to the paths** in the editor.
 
-It's currently compatible with **VS Code** and **Zed** (awaiting official review from Zed team) officially, and can be easily ported to any editors that implement the LSP protocol (e.g., Neovim). We are welcome to [issues](https://github.com/kunlinglio/path-server/issues) or [contributions](https://github.com/kunlinglio/path-server/pulls) about your favorite editors.
+It's currently compatible with **VS Code** and **Zed** officially, and can be easily ported to any editors that implement the LSP protocol (e.g., Neovim). We are welcome to [issues](https://github.com/kunlinglio/path-server/issues) or [contributions](https://github.com/kunlinglio/path-server/pulls) about your favorite editors.
 
 <div align="center">
     <img src="./assets/demo-vscode.gif" alt="demo" style="width: 600px">
